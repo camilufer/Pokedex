@@ -1,0 +1,76 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: 'Press Start 2P', cursive;
+}
+.pokedex {
+  width: 50%;
+  height: 40em;
+  background-color: #DC0A2D;
+  border-radius: 6px;
+}
+.btn-blue {
+  margin-top: 1em;
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  border: 5px solid #DEDEDE;
+  background-color: #196A9E;
+}
+.colors-dots {
+  margin-top: 0.5em;
+}
+.red {
+  color: #B00019;
+}
+.yellow {
+  color: #F9E827;
+}
+.green {
+  color: #67C007 ;
+}
+#pokeInfo {
+  margin-top: 1em;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  width: 80%;
+  height: 300px;
+  background-color: #DEDEDE;
+  border-radius: 6px;
+}
+#pokeInput {
+  border: none;
+  background-color: #51AE5F;
+  border-radius: 6px;
+  height: 6em;
+  margin-top: 3em;
+}
+#pokeInput:focus{
+  background-color: #51a55f;
+}
+#btn-search {
+  margin-top: 4em;
+  color: #dedede;
+  height: 3em;
+  border-radius: 25px;
+  width: 10em;
+  border: 3px solid #A18D0F;
+  background-color: #072320;
+}
+
+.modal-content {
+  width: 600px;
+  margin-top: 80%;
+  font-size: 50px;
+}
+.close {
+  float: right;
+  margin-top: -70px;
+}
+
+.info-modal {
+  height: 250px;
+}

@@ -1,37 +1,34 @@
-yeq/*var buscar = document.getElementById('btn-search');
-buscar.addEventListener('click', function(){
-  var param = document.getElementById('pokeInput').value;
-  var pokeURL = "http://pokeapi.co/api/v1/pokemon/" + param;
-
-  $.ajax(pokeURL, function(data){
-    //console.log(data);
-    //console.log(JSON.stringift(data, null, " "));
+//agragando evento al boton de buscar
+$('#btn-search').click(function(){
+  const pokeName = $('#pokeInput').val();
+  const pokeNormal = pokeName.toLowerCase();
+  $.ajax({
+    url: `https://pokeapi.co/api/v2/pokemon/${pokeNormal}`,
+    type: 'GET',
+    datatype: 'json',
+    success: function(results){
+      console.log(results);
+    }
   })
-})*/
-function callEndpoint() {
-    $.getJSON('https://api.pokemontcg.io/v1',
-    console.log(data) /*function(data) {
-        $('#output').append(data.rows[0].user_id);
-    }*/
-    );
-}
+  .done(response)
+  .fail(error);
+  function response(data) {
+    $('#pokeInfo').empty();
+    const pokeImg = data.sprites.front_default;
+    const pokeType = data.types[0].type.name;
+    const pokemonName = data.name;
+    const pokeNumber = data.id;
+    const pokeHeight = data.height;
+    const pokeWeight = data.weight;
+    const pokeBaseExperience = data.base_experience;
+    const pokeAbilities = data.abilities[0].ability.name;
+    const pokeLocation = data.location_area_encounters;
+    $('#modalPokeInfo').empty();
+    $('#pokeInfo').append(`<img class="pakimon-imagen pakimon-img-modal" src="${pokeImg}" data-toggle="modal" data-target="#modalPokeInfo"><h4><strong>${data.name}</strong></h4>`);
+    $('#modalPokeInfo').append(`<p>Número de Pokedex: ${pokeNumber}</p><p>Tipo: ${pokeType}</p><p>Peso: ${pokeWeight}</p><p>Altura: ${pokeHeight}</p><p>Experiencia base: ${pokeBaseExperience}</p><p>Habilidades: ${pokeAbilities}</p>`)
+  }
 
-const pokemon = require(callEndpoint());
-
-// Get all cards
-pokemon.card.all()
-.on('data', function (card) {
-  console.log(card.name)
-});
-
-// Filter Cards
-pokemon.card.all({ supertype: 'pokemon', types: 'dragon|fire|flying', hp: 'gt100' })
-.on('data', function (card) {
-    console.log(card.name)
-});
-
-// Get cards on a specific page / pageSize
-pokemon.card.where({ page: 50, pageSize: 500})
-.then(cards => {
-    console.log(cards[0].name)
+  function error(){
+    alert('Ha ocurrido un error')
+  }
 })
