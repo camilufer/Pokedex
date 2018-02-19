@@ -22,10 +22,9 @@ $('#btn-search').click(function(){
     const pokeWeight = data.weight;
     const pokeBaseExperience = data.base_experience;
     const pokeAbilities = data.abilities[0].ability.name;
-    const pokeLocation = data.location_area_encounters;
     $('#modalPokeInfo').empty();
-    $('#pokeInfo').append(`<img class="pakimon-imagen pakimon-img-modal" src="${pokeImg}" data-toggle="modal" data-target="#modalPokeInfo"><h4><strong>${data.name}</strong></h4>`);
-    $('#modalPokeInfo').append(`<p>Número de Pokedex: ${pokeNumber}</p><p>Tipo: ${pokeType}</p><p>Peso: ${pokeWeight}</p><p>Altura: ${pokeHeight}</p><p>Experiencia base: ${pokeBaseExperience}</p><p>Habilidades: ${pokeAbilities}</p>`)
+    $('#pokeInfo').append(`<img class="poke-imagen poke-img-modal" src="${pokeImg}" data-toggle="modal" data-target="#modalPokeInfo"><h4><strong>${data.name}</strong></h4>`);
+    $('#modalPokeInfo').append(`<div class="modal-dialog" role="document"><div class="modal-content"><div class="modal-header"><h3 class="modal-title">Información </h3></div><div class="modal-body"><p>Número de Pokedex: ${pokeNumber}</p><p>Tipo: ${pokeType}</p><p>Peso: ${pokeWeight}</p><p>Altura: ${pokeHeight}</p><p>Experiencia base: ${pokeBaseExperience}</p><p>Habilidades: ${pokeAbilities}</p></div></div></div>`)
   }
 
   function error(){

@@ -62,13 +62,10 @@ body {
 }
 
 .modal-content {
-  width: 600px;
-  margin-top: 80%;
-  font-size: 50px;
-}
-.close {
-  float: right;
-  margin-top: -70px;
+  width: 100%;
+  font-size: 17px;
+  background-color: teal;
+  height: auto;
 }
 
 .info-modal {
