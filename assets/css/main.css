@@ -7,13 +7,10 @@ body {
 }
 .pokedex {
   width: 50%;
- 
+  margin-bottom: 1em;
   background-color: #DC0A2D;
   border-radius: 6px;
 }
-
-
-
 .btn-blue {
   margin-top: 1em;
   width: 70px;
@@ -83,8 +80,8 @@ margin: 1em;
   height: 250px;
 }
 
-@media (max-width: 768){
-  .pokedex{
+@media (max-width: 768px) {
+  .pokedex {
     width: 100%;
     text-align: center;
   }

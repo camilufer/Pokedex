@@ -15,6 +15,7 @@ $('#btn-search').click(function(){
   function response(data) {
     $('#pokeInfo').empty();
     const pokeImg = data.sprites.front_default;
+    const pokeShiny = data.sprites.front_shiny;
     const pokeType = data.types[0].type.name;
     const pokemonName = data.name;
     const pokeNumber = data.id;
@@ -23,14 +24,41 @@ $('#btn-search').click(function(){
     const pokeBaseExperience = data.base_experience;
     const pokeAbilities = data.abilities[0].ability.name;
     $('#modalPokeInfo').empty();
-    $('#pokeInfo').append(`<img class="poke-imagen poke-img-modal" src="${pokeImg}" data-toggle="modal" data-target="#modalPokeInfo"><h4><strong>${data.name}</strong></h4>`);
-    $('#modalPokeInfo').append(`<div class="modal-dialog" role="document"><div class="modal-content"><div class="modal-header"><h3 class="modal-title">Información </h3></div><div class="modal-body"><p>Número de Pokedex: ${pokeNumber}</p><p>Tipo: ${pokeType}</p><p>Peso: ${pokeWeight}</p><p>Altura: ${pokeHeight}</p><p>Experiencia base: ${pokeBaseExperience}</p><p>Habilidades: ${pokeAbilities}</p></div></div></div>`)
+    $('#pokeInfo').append(`<img class="poke-imagen poke-img-modal" src="${pokeImg}" data-toggle="modal" data-target="#modalPokeInfo"><h4><strong>${data.name}</strong></h4><img class=poke-imagen poke-img-modal src="${pokeShiny}"><h4>Shiny version</h4>`);
+    $('#modalPokeInfo').append(`<div class="modal-dialog" role="document"><div class="modal-content"><div class="modal-header"><h3 class="modal-title">Información </h3></div><div class="modal-body"><p>Número de Pokedex: ${pokeNumber}</p><p>Tipo: ${pokeType}</p><p>Peso: ${pokeWeight}</p><p>Altura: ${pokeHeight}</p><p>Experiencia base: ${pokeBaseExperience}</p><p>Habilidades: ${pokeAbilities}</p></div></div></div>`);
   }
+  $.ajax({
+      url: `https://pokeapi.co/api/v2/pokemon-species/${pokeNormal}`,
+      method: 'GET',
+      datatype: 'json'
+    })
+    .done(data)
+    .fail(error);
+    function data(data) {
+      console.log(data);
+      const description = data.flavor_text_entries[3].flavor_text;
+      $('.descripcion').empty();
+      $('.descripcion').append(`<p>${description}</p>`);
+    }
 
   function error(){
     alert('Ha ocurrido un error')
   }
 })
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /*$(document).ready(function(){
   var searchCard = function(data){
