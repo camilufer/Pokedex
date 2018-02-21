@@ -7,7 +7,6 @@ body {
 }
 .pokedex {
   width: 50%;
-  /*height: 40em;*/
   margin-bottom: 1em;
   background-color: #DC0A2D;
   border-radius: 6px;
@@ -20,6 +19,11 @@ body {
   border: 5px solid #DEDEDE;
   background-color: #196A9E;
 }
+
+.container-pokeinfo{
+margin: 1em;
+}
+
 .colors-dots {
   margin-top: 0.5em;
 }
@@ -37,12 +41,15 @@ body {
   margin-left: auto;
   margin-right: auto;
   text-align: center;
-  width: 80%;
   height: 300px;
   background-color: #DEDEDE;
   border-radius: 6px;
+
 }
+
+
 #pokeInput {
+ 
   border: none;
   background-color: #51AE5F;
   border-radius: 6px;
@@ -72,6 +79,7 @@ body {
 .info-modal {
   height: 250px;
 }
+
 @media (max-width: 768px) {
   .pokedex {
     width: 100%;
