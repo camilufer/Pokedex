@@ -44,10 +44,11 @@ margin: 1em;
   height: 300px;
   background-color: #DEDEDE;
   border-radius: 6px;
-
 }
-
-
+.description {
+  opacity: 1;
+  padding-top: 1em;
+}
 #pokeInput {
  
   border: none;
@@ -68,18 +69,76 @@ margin: 1em;
   border: 3px solid #A18D0F;
   background-color: #072320;
 }
-
+.panel {
+  
+}
+/* color segun tipo */
+.colorNormal {
+  background-color: #D8D8C0;
+}
+.colorWater {
+  background-color: #67D2F1;
+}
+.colorFire {
+  background-color: #F08030;
+}
+.colorGrass {
+  background-color: #78C850;
+}
+.colorPoison {
+  background-color: #927b98;
+}
+.colorFairy {
+  background-color: #F4BDC9;
+}
+.colorFlying {
+  background-color: #C8C0F8;
+}
+.colorElectric {
+  background-color: #F8F878;
+}
+.colorGround {
+  background-color: #b87414;
+}
+.colorRock {
+  background-color: #E0C068;
+}
+.colorSteel {
+  background-color: #D3D3D3;
+}
+.colorFighting {
+  background-color: #F08030;
+}
+.colorPsychic {
+  background-color: #F8C0B0;
+}
+.colorBug {
+  background-color: #A8B820;
+}
+.colorDragon {
+  background-color: #B8A0F8;
+}
+.colorGhost {
+  background-color: #A890F0;
+}
+.colorIce {
+  background-color: #D0F8E8;
+}
+.colorDark {
+  background-color: #A8A878;
+}
+/* modal */
 .modal-content {
   width: 100%;
   font-size: 17px;
   background-color: teal;
   height: auto;
 }
-
 .info-modal {
   height: 250px;
 }
 
+/* media queries */
 @media (max-width: 768px) {
   .pokedex {
     width: 100%;
